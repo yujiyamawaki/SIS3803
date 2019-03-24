@@ -1,4 +1,4 @@
-# ofxSIS3803VMEcounter
+# ofxSIS3803
 ## Overview
 VMEcontroller V1718とSIS3803 Scaler/Counterを使用したデータ収集システムです。
 ## Description
@@ -15,6 +15,7 @@ PCにfirmwareをインストールする必要があります。
 SIS3803のマニュアルです。  
 [SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
 ## Usage
+0. make しましょう  
 1. /misc/config.txtにCLKを入れるチャンネルとCLK rate(Hz)を設定します。  
 2. オプションをつけると/misc/DAQ.logにログを残せます。  
 - test 出力ファイルはraw0000.csv  
@@ -27,7 +28,7 @@ SIS3803のマニュアルです。
 ./sDAQ [-p] [time(sec)]  
 ## Install
 1. インストール方法  
-git clone git@github.com:yujiyamawaki/sDAQ.git  
+git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
 2.  更新  
 git pull  
 ## Author
