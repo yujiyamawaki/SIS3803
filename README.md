@@ -16,7 +16,7 @@ PCにfirmwareをインストールする必要があります．
 SIS3803のマニュアルです．  
 [SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
 回路を図のように組み，空きチャンネルに信号を入れると計数することができます．
-<img width="400" alt="NIM" src="https://user-images.githubusercontent.com/23188436/54983798-e2f58f80-4ff0-11e9-9cbe-884d5a190f40.png">
+<img width="1000" alt="NIM" src="https://user-images.githubusercontent.com/23188436/54983798-e2f58f80-4ff0-11e9-9cbe-884d5a190f40.png">
 ## Install
 1. インストール方法  
 git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
@@ -34,7 +34,7 @@ git pull
 ./sDAQ -c [time(sec)]  
 - physics  
 ./sDAQ -p [time(sec)]  
-<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="400px">
+<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="600px">
 
 ````csharp
 for eachLine in data:
