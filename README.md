@@ -31,7 +31,7 @@ git pull
 ./sDAQ -c [time(sec)]  
 - physics  
 ./sDAQ -p [time(sec)]  
-![IMG_6905](https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg)
+<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="320px">
 
 ````csharp
 using System;
