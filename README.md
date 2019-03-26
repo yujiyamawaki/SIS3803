@@ -15,8 +15,8 @@ PCにfirmwareをインストールする必要があります．
 [V1718firmware](http://www.caen.it/csite/CaenProd.jsp?idmod=417&parent=11)  
 SIS3803のマニュアルです．  
 [SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
-<img src="https://github.com/yujiyamawaki/ofxSIS3803/files/3007258/NIM.pdf" width="400px">
-
+回路を図のように組み，空きチャンネルに信号を入れると計数することができます．
+<img width="400" alt="NIM" src="https://user-images.githubusercontent.com/23188436/54983798-e2f58f80-4ff0-11e9-9cbe-884d5a190f40.png">
 ## Install
 1. インストール方法  
 git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
