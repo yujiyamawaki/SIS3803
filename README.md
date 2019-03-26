@@ -15,6 +15,8 @@ PCにfirmwareをインストールする必要があります．
 [V1718firmware](http://www.caen.it/csite/CaenProd.jsp?idmod=417&parent=11)  
 SIS3803のマニュアルです．  
 [SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
+<img src="https://github.com/yujiyamawaki/ofxSIS3803/files/3007258/NIM.pdf" width="400px">
+
 ## Install
 1. インストール方法  
 git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
