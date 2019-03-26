@@ -1,6 +1,7 @@
 # ofxSIS3803
 ## Overview
-VMEcontroller V1718とSIS3803 Scaler/Counterを使用したデータ収集システムです．plot/Monitor.pyを使用すれば取得したデータをモニタリングすることができます．
+VMEcontroller V1718とSIS3803 Scaler/Counterを使用したデータ収集システムです．  
+plot/Monitor.pyを使用すれば取得したデータをモニタリングすることができます．
 ## Description
 外部クロック制御で動きます．  
 rawxxxx.csvにスケーラ情報を書き出し，
@@ -31,23 +32,33 @@ git pull
 ./sDAQ -c [time(sec)]  
 - physics  
 ./sDAQ -p [time(sec)]  
-<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="320px">
+<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="400px">
 
 ````csharp
-using System;
-namespace Xamalist
-{
-    // 外部に公開したくない文字列などの設定ファイル
-    public static class Consts
-    {
-        // 接続先の Webサーバのアドレス
-        public static readonly string AzureWebsitesUrl = "https://(サーバーのURL文字列).azurewebsites.net";
+for eachLine in data:
+    if len(eachLine.split(',')) != 17: continue
+    else:
+        counter +=1
+        if counter < timeScale:
+            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')
+            x = np.append(x,np.array([int(ch0)/10]))
+            y0 = np.append(y0,np.array([int(ch1)]))
+            y1 = np.append(y1,np.array([int(ch2)]))
 
-        // Azure 上のストレージの接続文字列
-        public static readonly string StorageConnectionString = "めっちゃ長い接続文字列。Azureのポータルの「アクセスキー」から取って来てね";
-        // 参照:『Microsoft Azure Storage の概要』 https://docs.microsoft.com/ja-jp/azure/storage/storage-introduction
-    }
-}
+        if counter > readlen and counter >= timeScale:
+            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')
+            x = np.append(x,np.array([int(ch0)/10]))
+            y0 = np.append(y0,np.array([int(ch1)]))
+            y1 = np.append(y1,np.array([int(ch2)]))
+
+diff_y0 = np.diff(y0)
+diff_y1 = np.diff(y1)
+
+mx = max(x)
+ax1.clear()
+
+ax1.plot(x,diff_y0, label='Ch.1')
+ax1.plot(x,diff_y1, label='Ch.2')
 ````
 ## Author
 [yujiyamawaki](https://github.com/yujiyamawaki)  
