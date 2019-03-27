@@ -28,11 +28,12 @@ git pull
 ./sDAQ -c [time(sec)]  
 - physics  
 ./sDAQ -p [time(sec)]  
-3. python3 Monitor.py xxxx とするとリアルタイムで取得データをモニタリングすることができます．事前にmatplotlibやPython3の環境設定をしておく必要があります．(matplotlibをインストールすると毎回のことながらtinker関連のエラーが出力されるけど，ググれば解決できるので自分で対処しましょう，)    
+3. python3 plot/Monitor.py xxxx  
+でリアルタイムで取得データをモニタリングすることができます．事前にmatplotlibやPython3の環境設定をしておく必要があります．(matplotlibをインストールすると毎回のことながらtinker関連のエラーが出力されるけど，ググれば解決できるので自分で対処しましょう，)    
 ↓こんな感じでモニタリングできる．  
 <img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
-監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここのかしょ．
-````csharp  
+監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここの箇所．
+```python:plot.py
 for eachLine in data:  
     if len(eachLine.split(',')) != 17: continue  
     else:  
@@ -53,6 +54,6 @@ mx = max(x)
 ax1.clear()  
 ax1.plot(x,diff_y0, label='Ch.1')  
 ax1.plot(x,diff_y1, label='Ch.2')  
-````
+```
 ## Author
 [yujiyamawaki](https://github.com/yujiyamawaki)  
