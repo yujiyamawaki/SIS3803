@@ -9,8 +9,10 @@ rawxxxx.csvにスケーラ情報を書き出し，指定時間になるか．ctr
 firmwareをインストールする必要があります．[V1718firmware](http://www.caen.it/csite/CaenProd.jsp?idmod=417&parent=11)  
 SIS3803のマニュアルです．[SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
 ## Setup
-回路を図のように組み，空きチャンネル(ch.1~15)に信号を入れると計数することができます．
-<img width="560" alt="NIM" src="https://user-images.githubusercontent.com/23188436/55050032-1f2cfc80-5092-11e9-9980-6cfed880c340.png">
+回路を図のように組み，空きチャンネル(ch.1~15)に信号を入れると計数することができます．  
+  
+<img width="800" alt="NIM" src="https://user-images.githubusercontent.com/23188436/55050032-1f2cfc80-5092-11e9-9980-6cfed880c340.png">
+  
 ## Install
 1. インストール方法  
 git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
@@ -31,9 +33,9 @@ git pull
 3. python3 plot/Monitor.py xxxx  
 でリアルタイムで取得データをモニタリングすることができます．事前にmatplotlibやPython3の環境設定をしておく必要があります．(matplotlibをインストールすると毎回のことながらtinker関連のエラーが出力されるけど，ググれば解決できるので自分で対処しましょう，)    
 ↓こんな感じでモニタリングできる．  
-<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
-監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここの箇所．  
-
+<img src="https://user-images.githubusercontent.com/23188436/55050114-64e9c500-5092-11e9-8baa-387a377f1826.jpeg" width="500px">
+監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる．  
+具体的にはここの箇所付近．    
 ~~~python:plot.py
 for eachLine in data:
     if len(eachLine.split(',')) != 17: continue
