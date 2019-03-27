@@ -1,4 +1,3 @@
-# ofxSIS3803
 ## Overview
 VMEcontroller V1718とSIS3803 Scaler/Counterを使用したデータ収集システムです．  
 plot/Monitor.pyを使用すれば取得したデータをモニタリングすることができます．
