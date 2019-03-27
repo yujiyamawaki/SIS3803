@@ -10,7 +10,7 @@ firmwareをインストールする必要があります．[V1718firmware](http:
 SIS3803のマニュアルです．[SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
 ## Setup
 回路を図のように組み，空きチャンネル(ch.1~15)に信号を入れると計数することができます．
-<img width="500" alt="NIM" src="https://user-images.githubusercontent.com/23188436/54983798-e2f58f80-4ff0-11e9-9cbe-884d5a190f40.png">
+<img width="560" alt="NIM" src="https://user-images.githubusercontent.com/23188436/55050032-1f2cfc80-5092-11e9-9980-6cfed880c340.png">
 ## Install
 1. インストール方法  
 git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
