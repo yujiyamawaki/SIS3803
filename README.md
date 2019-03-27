@@ -36,6 +36,7 @@ git pull
 <img src="https://user-images.githubusercontent.com/23188436/55050114-64e9c500-5092-11e9-8baa-387a377f1826.jpeg" width="500px">
 監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる．  
 具体的にはここの箇所付近．  
+
 ~~~python:plot.py
 for eachLine in data:
     if len(eachLine.split(',')) != 17: continue
