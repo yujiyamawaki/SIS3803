@@ -34,26 +34,27 @@ git pull
 <img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
 監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここの箇所．
 ```python:plot.py
-for eachLine in data:  
-    if len(eachLine.split(',')) != 17: continue  
-    else:  
-        counter +=1  
-        if counter < timeScale:  
-            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')  
-            x = np.append(x,np.array([int(ch0)/10]))  
-            y0 = np.append(y0,np.array([int(ch1)]))  
-            y1 = np.append(y1,np.array([int(ch2)]))  
-        if counter > readlen and counter >= timeScale:  
-            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')  
-            x = np.append(x,np.array([int(ch0)/10]))  
-            y0 = np.append(y0,np.array([int(ch1)]))  
-            y1 = np.append(y1,np.array([int(ch2)]))  
-diff_y0 = np.diff(y0)  
-diff_y1 = np.diff(y1)  
-mx = max(x)  
-ax1.clear()  
-ax1.plot(x,diff_y0, label='Ch.1')  
-ax1.plot(x,diff_y1, label='Ch.2')  
+for eachLine in data:
+    if len(eachLine.split(',')) != 17: continue
+    else:
+        counter +=1
+        if counter < timeScale:
+            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')
+            x = np.append(x,np.array([int(ch0)/10]))
+            y0 = np.append(y0,np.array([int(ch1)]))
+            y1 = np.append(y1,np.array([int(ch2)]))
+        if counter > readlen and counter >= timeScale:
+            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')
+            x = np.append(x,np.array([int(ch0)/10]))
+            y0 = np.append(y0,np.array([int(ch1)]))
+            y1 = np.append(y1,np.array([int(ch2)]))
+diff_y0 = np.diff(y0)
+diff_y1 = np.diff(y1)
+mx = max(x)
+ax1.clear()
+ax1.plot(x,diff_y0, label='Ch.1')
+ax1.plot(x,diff_y1, label='Ch.2')
 ```
+
 ## Author
 [yujiyamawaki](https://github.com/yujiyamawaki)  
