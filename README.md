@@ -33,7 +33,8 @@ git pull
 ↓こんな感じでモニタリングできる．  
 <img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
 監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここの箇所．  
-```python:plot.py
+
+~~~python:plot.py
 for eachLine in data:
     if len(eachLine.split(',')) != 17: continue
     else:
@@ -54,7 +55,7 @@ mx = max(x)
 ax1.clear()
 ax1.plot(x,diff_y0, label='Ch.1')
 ax1.plot(x,diff_y1, label='Ch.2')
-```
+~~~
 
 ## Author
 [yujiyamawaki](https://github.com/yujiyamawaki)  
