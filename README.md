@@ -31,7 +31,7 @@ git pull
 3. python3 plot/Monitor.py xxxx  
 でリアルタイムで取得データをモニタリングすることができます．事前にmatplotlibやPython3の環境設定をしておく必要があります．(matplotlibをインストールすると毎回のことながらtinker関連のエラーが出力されるけど，ググれば解決できるので自分で対処しましょう，)    
 ↓こんな感じでモニタリングできる．  
-<img src="https://user-images.githubusercontent.com/23188436/55050114-64e9c500-5092-11e9-8baa-387a377f1826.jpeg" width="500px">
+<img width="800" src="https://user-images.githubusercontent.com/23188436/55050765-b5165680-5095-11e9-8454-93e2a4484ecf.png">
 監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる．  
 具体的にはここの箇所付近．  
 
