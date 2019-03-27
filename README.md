@@ -10,7 +10,7 @@ firmwareをインストールする必要があります．[V1718firmware](http:
 SIS3803のマニュアルです．[SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
 ## Setup
 回路を図のように組み，空きチャンネル(ch.1~15)に信号を入れると計数することができます．
-<img width="1000" alt="NIM" src="https://user-images.githubusercontent.com/23188436/54983798-e2f58f80-4ff0-11e9-9cbe-884d5a190f40.png">
+<img width="500" alt="NIM" src="https://user-images.githubusercontent.com/23188436/54983798-e2f58f80-4ff0-11e9-9cbe-884d5a190f40.png">
 ## Install
 1. インストール方法  
 git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
@@ -30,29 +30,29 @@ git pull
 ./sDAQ -p [time(sec)]  
 3. python3 Monitor.py xxxx とするとリアルタイムで取得データをモニタリングすることができます．事前にmatplotlibやPython3の環境設定をしておく必要があります．(matplotlibをインストールすると毎回のことながらtinker関連のエラーが出力されるけど，ググれば解決できるので自分で対処しましょう，)    
 ↓こんな感じでモニタリングできる．  
-<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="600px">
+<img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
 監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここのかしょ．
 ````csharp
-for eachLine in data:
-    if len(eachLine.split(',')) != 17: continue
-    else:
-        counter +=1
-        if counter < timeScale:
-            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')
-            x = np.append(x,np.array([int(ch0)/10]))
-            y0 = np.append(y0,np.array([int(ch1)]))
-            y1 = np.append(y1,np.array([int(ch2)]))
-        if counter > readlen and counter >= timeScale:
-            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')
-            x = np.append(x,np.array([int(ch0)/10]))
-            y0 = np.append(y0,np.array([int(ch1)]))
-            y1 = np.append(y1,np.array([int(ch2)]))
-diff_y0 = np.diff(y0)
-diff_y1 = np.diff(y1)
-mx = max(x)
-ax1.clear()
-ax1.plot(x,diff_y0, label='Ch.1')
-ax1.plot(x,diff_y1, label='Ch.2')
+for eachLine in data:  
+    if len(eachLine.split(',')) != 17: continue  
+    else:  
+        counter +=1  
+        if counter < timeScale:  
+            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')  
+            x = np.append(x,np.array([int(ch0)/10]))  
+            y0 = np.append(y0,np.array([int(ch1)]))  
+            y1 = np.append(y1,np.array([int(ch2)]))  
+        if counter > readlen and counter >= timeScale:  
+            (time, ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15) = eachLine.split(',')  
+            x = np.append(x,np.array([int(ch0)/10]))  
+            y0 = np.append(y0,np.array([int(ch1)]))  
+            y1 = np.append(y1,np.array([int(ch2)]))  
+diff_y0 = np.diff(y0)  
+diff_y1 = np.diff(y1)  
+mx = max(x)  
+ax1.clear()  
+ax1.plot(x,diff_y0, label='Ch.1')  
+ax1.plot(x,diff_y1, label='Ch.2')  
 ````
 ## Author
 [yujiyamawaki](https://github.com/yujiyamawaki)  
