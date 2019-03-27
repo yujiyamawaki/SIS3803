@@ -32,7 +32,7 @@ git pull
 でリアルタイムで取得データをモニタリングすることができます．事前にmatplotlibやPython3の環境設定をしておく必要があります．(matplotlibをインストールすると毎回のことながらtinker関連のエラーが出力されるけど，ググれば解決できるので自分で対処しましょう，)    
 ↓こんな感じでモニタリングできる．  
 <img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
-監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここの箇所．
+監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここの箇所．  
 ```python:plot.py
 for eachLine in data:
     if len(eachLine.split(',')) != 17: continue
