@@ -3,8 +3,7 @@
 VMEcontroller V1718とSIS3803 Scaler/Counterを使用したデータ収集システムです．  
 plot/Monitor.pyを使用すれば取得したデータをモニタリングすることができます．
 ## Description
-外部クロック制御で動きます．  
-rawxxxx.csvにスケーラ情報を書き出し，指定時間になるか．ctrl+cで中断シグナルを送るとbuildxxxx.csvに取得したデータが出力されます．
+このコードでは外部クロック制御で読み出すことを目的として設計されています．../data/rawxxxx.csvにスケーラ情報を書き出し，指定時間になるか．ctrl+cで中断シグナルを送ると../data/buildxxxx.csvに取得したデータが出力されます．
 ## Requirement
 firmwareをインストールする必要があります．[V1718firmware](http://www.caen.it/csite/CaenProd.jsp?idmod=417&parent=11)  
 SIS3803のマニュアルです．[SIS3803Manuals](http://dasdevpc.triumf.ca/online/manuals/vme/sis3803.pdf)  
@@ -19,7 +18,7 @@ git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
 2.  更新  
 git pull  
 ## Usage
-0. cloneしたままでは動きません，makeしましょう．すると sDAQ って名前の実行ファイルができます．  
+0. cloneしたままでは動きません，makeしましょう．すると sDAQ って名前の実行ファイルができます．後取得データの出力先がデフォで../data/rawxxxx.csvをしているしているので一階層上のディレクトリに data って名前のフォルダを作成する必要があります．    
 1. /misc/config.txtにCLKを入れるチャンネルとCLK rate(Hz)を設定します，デフォルトで10Hzに設定してあります．SIS3803の読み出し理論値が200MHzなのでサンプリングレートの最大値はその辺りです．試したことないけど．   
 2. オプションをつけると/misc/DAQ.logにログを残せます．  
 - test (この場合，出力ファイルはraw0000.csvに取得データが出力される．)  
