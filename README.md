@@ -32,7 +32,7 @@ git pull
 ↓こんな感じでモニタリングできる．  
 <img src="https://user-images.githubusercontent.com/23188436/54976528-ff3c0100-4fdd-11e9-818d-b5b8968a093c.jpeg" width="500px">
 監視したいチャンネルを増やしたり減らしたりするときはplot/Monitor.pyをいじれば変更できる具体的にはここのかしょ．
-````csharp
+````csharp  
 for eachLine in data:  
     if len(eachLine.split(',')) != 17: continue  
     else:  
