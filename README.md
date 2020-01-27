@@ -13,7 +13,7 @@ SIS3803のマニュアルです．[SIS3803Manuals](http://dasdevpc.triumf.ca/onl
   
 ## Install
 1. インストール方法  
-git clone git@github.com:yujiyamawaki/ofxSIS3803.git  
+git clone git@github.com:yujiyamawaki/SIS3803.git  
 2.  更新  
 git pull  
 ## Usage
