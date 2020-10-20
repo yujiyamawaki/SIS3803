@@ -40,10 +40,10 @@ int main(int argc, char **argv)
         exit(-1);
     }
 
-    CAENVME_WriteCycle( Handle, 0x5555002C, &bitFlag1,  AM, DW);
+    CAENVME_WriteCycle( Handle, SIS3803AD + SIS3803_DISABLE, &bitFlag1,  AM, DW);
     sleep(1);
 
-    CAENVME_WriteCycle( Handle, 0x55550020, &bitFlag1,  AM, DW);
+    CAENVME_WriteCycle( Handle, SIS3803AD + SIS3803_CLR_REG, &bitFlag1,  AM, DW);
     sleep(1);
     
     printf("you can start data taking\n");
